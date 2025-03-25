@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Predictive Machine Learning model Regression</title>
+    </head>
+    <body style = "background-color:powderblue;">
+        <h1 style = "color:violetblue;">Predictive machine learning model</h1>
+        <h3 style = "color:green;">Predictive modelling for banking fradulent detection</h3>
+        <form action = "/predict" method = 'POST'>
+            <label>age (int):</label>
+            <input type = "number" name = "age" step = "1" min = "1" max = "90"><br><br>
+            
+            <label>income (int)</label>
+            <input type = "number" name = "income" step = "1" min = "1000" max = "1000000"><br><br>
+            
+            <label>loan_amount (int)</label>
+            <input type = "number" name = "loan_amount" step = "1" min = "1" max = "100000"><br><br>
+            
+            <label>credit_score (int)</label>
+            <input type = "number" name = "credit_score" step = "1" min = "200" max = "999"><br><br>
+            
+            <label>employment_status (Category)</label>
+            <select name = "employment_status">
+                <option value = "unemployed">unemployed</option>
+                <option value = "employed">employed</option>
+                <option value = "self-employed">self-employed</option>
+            </select><br><br>
+                
+            <label>loan_term (int)</label>
+            <input type = "number" name = "loan_term" step = "12" min = "12" max = "60"><br><br>
+            
+            <label>interest_rate (float)</label>
+            <input type = "number" name = "interest_rate" step = "0.5" min = "3.5" max = "20"><br><br>
+            
+            <label>debt_to_income_ratio (int)</label>
+            <input type = "number" name = "debt_to_income_ratio" step = "0.5" min = "10" max = "50"><br><br>
+
+
+            <label>num_of_dependents (int)</label>
+            <input type = "number" name = "num_of_dependents" step = "1" min = "0" max = "5"><br><br>
+            
+            <label>education_level (Category)</label>
+            <select name = "education_level">
+                <option value = "high_school">high_school</option>
+                <option value = "bachelor">bachelor</option>
+                <option value = "master">master</option>
+                <option value = "phd">phd</option>
+            </select><br><br>
+
+            <label>home_ownership (Category)</label>
+            <select name = "home_ownership">
+                <option value = "rent">rent</option>
+                <option value = "own">own</option>
+                <option value = "mortgage">mortgage</option>
+            </select><br><br>
+
+            <label>marital_status (Category)</label>
+            <select name = "marital_status">
+                <option value = "single">single</option>
+                <option value = "married">married</option>
+                <option value = "divorced">divorced</option>
+            </select><br><br>
+            
+            <label>credit_history_length (int)</label>
+            <input type = "number" name = "credit_history_length" step = "1" min = "1" max = "29"><br><br>
+            
+            <label>num_credit_lines (int)</label>
+            <input type = "number" name = "num_credit_lines" step = "1" min = "1" max = "19"><br><br>
+            
+            <label>late_payments (int)</label>
+            <input type = "number" name = "late_payments" step = "1" min = "0" max = "9"><br><br>
+            
+            <label>bankruptcies (int)</label>
+            <input type = "number" name = "bankruptcies" step = "1" min = "0" max = "2"><br><br>
+            
+            <label>annual_savings (int)</label>
+            <input type = "number" name = "annual_savings" step = "1" min = "500" max = "50000"><br><br>
+            
+            <label>retirement_savings (int)</label>
+            <input type = "number" name = "retirement_savings" step = "1" min = "1000" max = "200000"><br><br>
+            
+            <label>monthly_expenses (int)</label>
+            <input type = "number" name = "monthly_expenses" step = "1" min = "500" max = "50000"><br><br>
+
+            <button type = 'submit'>Predict</button>
+        </form>
+        {% if prediction %}
+        <h2>{{prediction}}</h2>
+        {% endif %}
+    </body>
+</html>

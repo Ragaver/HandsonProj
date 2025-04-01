@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Predictive Model Regression</title>
+    </head>
+    <body style = 'background-color:aquamarine;'>
+        <h1 style = 'color = violetblue;'>Predictive model for power consumption</h1>
+        <form action = "/predict" method = "POST">
+            <label>Temperature  (Float): </label>
+            <input type = "number" name = 'Temperature' step = '0.5' min = '3' max = '20'><br><br>
+
+            <label>Humidity  (Float): </label>
+            <input type = "number" name = 'Humidity' step = '0.5' min = '27.5' max = '90'><br><br>
+
+            <label>Wind Speed  (Float): </label>
+            <input type = "number" name = 'Wind Speed' step = '0.1' min = '0.1' max = '5'><br><br>
+
+            <label>general diffuse flows  (Float): </label>
+            <input type = "number" name = 'general diffuse flows' step = '1' min = '1' max = '780'><br><br>
+
+            <label>diffuse flows  (Float): </label>
+            <input type = "number" name = 'diffuse flows' step = '1' min = '1' max = '790'><br><br>
+
+            <label>Air Quality Index (PM)  (Float): </label>
+            <input type = "number" name = 'Air Quality Index (PM)' step = '1' min = '150' max = '159'><br><br>
+
+            <label>Cloudiness  (Float): </label>
+            <select name = "Cloudiness">
+                <option value = '0'>Not Cloudy</option>
+                <option value = '1'>Cloudy</option>
+            </select>
+
+            <button type = 'submit'>Predict</button>
+        </form>
+        {% if prediction %}
+        <h3>{{prediction}}</h3>
+        {% endif %}
+    </body>
+</html>
